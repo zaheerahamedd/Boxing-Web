@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHALID BOXING CLUB | OFFICIAL FIGHT NETWORK</title>
+    <!-- Tailwind CSS Engine CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Combat Icon Pack -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: High Contrast Impact Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        impact: ['Oswald', 'sans-serif'],
+                        teko: ['Teko', 'sans-serif']
+                    },
+                    colors: {
+                        arena: {
+                            black: '#030303',
+                            darker: '#0D0D0E',
+                            card: '#141416',
+                            red: '#FF0000',
+                            crimson: '#990000',
+                            gold: '#FFD700',
+                            gray: '#A1A1AA',
+                            border: '#27272A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .page-view { display: none; }
+        .page-view.active { display: block; }
+        .cinematic-glow {
+            box-shadow: 0 0 50px -10px rgba(255, 0, 0, 0.15);
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            color: transparent;
+        }
+        /* Custom Scrollbar for Sleek Dark Look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #030303; }
+        ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF0000; }
+    </style>
+</head>
+<body class="bg-arena-black text-white font-sans flex flex-col min-h-screen selection:bg-arena-red selection:text-white">
+
+    <!-- TICKER ALERT LINE -->
+    <div class="bg-arena-red text-black py-2 px-4 text-center text-xs font-black tracking-widest font-impact uppercase overflow-hidden whitespace-nowrap">
+        <span class="inline-block animate-marquee"><i class="fa-solid fa-triangle-exertion mr-2"></i> NEXT CHAMPIONSHIP CARD SANCTIONING REGISTRATIONS FILLING RAPIDLY — LOCK IN BIOMETRICS BELOW <i class="fa-solid fa-triangle-exertion ml-2"></i></span>
+    </div>
+
+    <!-- MAIN APP NAVIGATION HEADER -->
+    <header class="bg-arena-black/90 border-b border-arena-border sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Identity -->
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="switchView('home')">
+                <div class="bg-arena-red text-white p-3 transform -skew-x-12 group-hover:bg-white group-hover:text-black transition duration-300">
+                    <i class="fa-solid fa-gavel text-xl transform rotate-45"></i>
+                </div>
+                <span class="text-4xl font-bold tracking-tight uppercase font-teko leading-none">
+                    KHALID <span class="text-arena-red">BOXING CLUB</span>
+                </span>
+            </div>
+            
+            <!-- Mid Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-impact text-lg uppercase tracking-wider">
+                <button onclick="switchView('home')" class="nav-btn text-arena-red transition-all duration-300 border-b border-arena-red pb-1">Arena Home</button>
+                <button onclick="switchView('shop')" class="nav-btn text-arena-gray hover:text-white transition-all duration-300 pb-1">Pro Shop</button>
+                <button onclick="switchView('register')" class="nav-btn text-arena-gray hover:text-white transition-all duration-300 pb-1">Fighter Portal</button>
+            </nav>
+
+            <!-- Action Controllers -->
+            <div class="flex items-center space-x-6">
+                <!-- Cart System Trigger Button -->
+                <button onclick="toggleCartOverlay()" class="relative p-2.5 bg-arena-card border border-arena-border hover:border-arena-red text-arena-gray hover:text-white transition group rounded-none">
+                    <i class="fa-solid fa-shopping-bag text-xl group-hover:scale-110 transition"></i>
+                    <span id="global-cart-badge" class="absolute -top-2 -right-2 bg-arena-red text-white text-[10px] font-black rounded-none px-2 py-0.5 border border-arena-black hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CENTRAL CONTENT MODULE LAYOUT -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <!-- ================= PAGE 1: ARENA HOME HUB ================= -->
+        <section id="view-home" class="page-view active space-y-20">
+            <!-- Hero Spotlight Canvas Section -->
+            <div class="relative bg-arena-darker border border-arena-border p-8 md:p-20 overflow-hidden flex flex-col lg:flex-row items-center justify-between cinematic-glow">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,0,0,0.08),transparent_50%)]"></div>
+                
+                <div class="max-w-2xl space-y-6 z-10">
+                    <div class="inline-flex items-center space-x-2 bg-arena-red/10 border border-arena-red/30 px-3 py-1 text-xs font-bold text-arena-red uppercase tracking-widest">
+                        <span class="w-2 h-2 rounded-full bg-arena-red animate-ping"></span>
+                        <span>Official Match Network Portal</span>
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter font-impact leading-none text-white">
+                        FORGED IN <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-400 to-arena-red">BLOOD & IRON</span>
+                    </h1>
+                    <p class="text-arena-gray text-base md:text-lg max-w-lg leading-relaxed">
+                        Welcome to the raw heart of competitive striking. Khalid Boxing Club engineers high-performance athletes and premium, industrial-grade equipment tailored exclusively for combat.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <button onclick="switchView('register')" class="bg-arena-red text-white hover:bg-white hover:text-black font-impact text-lg uppercase tracking-wider px-10 py-4 transition transform -skew-x-6 shadow-xl shadow-arena-red/10">
+                            Apply to Compete
+                        </button>
+                        <button onclick="switchView('shop')" class="border border-arena-border hover:border-white text-white font-impact text-lg uppercase tracking-wider px-10 py-4 transition transform -skew-x-6 bg-black/40">
+                            Equip Armoury
+                        </button>
+                    </div>
+                </div>
+                <!-- Striking Outline Typography Element -->
+                <div class="mt-10 lg:mt-0 font-black text-[12rem] lg:text-[20rem] font-teko text-stroke select-none pointer-events-none tracking-tighter leading-none opacity-40">
+                    KBC
+                </div>
+            </div>
+
+            <!-- Operational Core Statistics Array -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-arena-card border border-arena-border p-6 text-center">
+                    <div class="text-4xl font-bold font-impact text-arena-red">12+</div>
+                    <div class="text-xs uppercase font-bold tracking-widest text-arena-gray mt-1">Sanctioned Pro Cards</div>
+                </div>
+                <div class="bg-arena-card border border-arena-border p-6 text-center">
+                    <div class="text-4xl font-bold font-impact text-white">4,800+</div>
+                    <div class="text-xs uppercase font-bold tracking-widest text-arena-gray mt-1">Active Fighters</div>
+                </div>
+                <div class="bg-arena-card border border-arena-border p-6 text-center">
+                    <div class="text-4xl font-bold font-impact text-arena-gold">98.2%</div>
+                    <div class="text-xs uppercase font-bold tracking-widest text-arena-gray mt-1">Safety Clearance</div>
+                </div>
+                <div class="bg-arena-card border border-arena-border p-6 text-center">
+                    <div class="text-4xl font-bold font-impact text-white">100%</div>
+                    <div class="text-xs uppercase font-bold tracking-widest text-arena-gray mt-1">Authentic Gear</div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE MEMBERSHIP PRICING ESTIMATOR WIDGET -->
+            <div class="bg-arena-darker border border-arena-border p-8 md:p-12 space-y-8">
+                <div class="text-center max-w-xl mx-auto space-y-2">
+                    <span class="text-arena-red font-bold text-xs uppercase tracking-widest">Interactive Calculator</span>
+                    <h2 class="text-3xl md:text-4xl font-bold font-impact uppercase tracking-tight">BUILD YOUR MEMBERSHIP LAYER</h2>
+                    <p class="text-arena-gray text-xs">Adjust core toggles below to calculate custom training commitments automatically.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center pt-4">
+                    <!-- Control Sliders -->
+                    <div class="space-y-6 md:col-span-2">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm uppercase font-bold tracking-wide">
+                                <label class="text-arena-gray">Weekly Training Frequency</label>
+                                <span class="text-arena-red font-impact" id="calc-display-days">3 Days</span>
+                            </div>
+                            <input type="range" min="1" max="7" value="3" id="calc-range-days" oninput="calculateInteractiveMembership()" class="w-full accent-arena-red h-1.5 bg-arena-border rounded-lg appearance-none cursor-pointer">
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm uppercase font-bold tracking-wide">
+                                <label class="text-arena-gray">Access Tier Plan</label>
+                                <span class="text-arena-gold font-impact" id="calc-display-tier">Standard Arena Access</span>
+                            </div>
+                            <input type="range" min="1" max="3" value="1" id="calc-range-tier" oninput="calculateInteractiveMembership()" class="w-full accent-arena-red h-1.5 bg-arena-border rounded-lg appearance-none cursor-pointer">
+                        </div>
+                    </div>
+                    <!-- Cost Box Output -->
+                    <div class="bg-arena-card border border-arena-border p-8 text-center space-y-4">
+                        <span class="text-xs font-bold uppercase text-arena-gray tracking-wider block">Estimated Commitment</span>
+                        <div class="text-5xl font-black text-white font-impact" id="calc-total-output">$45.00</div>
+                        <span class="text-[10px] text-arena-gray uppercase tracking-widest block">Billed Monthly / No Contract Hooks</span>
+                        <button onclick="switchView('register')" class="w-full bg-arena-red text-white py-2.5 font-impact uppercase tracking-wider text-sm hover:bg-white hover:text-black transition">Secure Access Badge</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: EXPANDED PRO STORE CATALOGUE ================= -->
+        <section id="view-shop" class="page-view space-y-10">
+            <div class="border-b border-arena-border pb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                <div>
+                    <h2 class="text-5xl font-black uppercase tracking-tight font-impact text-white">THE CLUB <span class="text-arena-red">ARMOURY</span></h2>
+                    <p class="text-arena-gray text-xs uppercase tracking-widest mt-1">Commercial combat equipment engineered for maximum durability</p>
+                </div>
+                <div class="flex space-x-2">
+                    <button class="bg-arena-card text-white text-xs px-4 py-2 font-bold uppercase tracking-wider border border-arena-red">All Gear</button>
+                    <button class="bg-arena-black text-arena-gray text-xs px-4 py-2 font-bold uppercase tracking-wider border border-arena-border hover:border-white transition">Apparel</button>
+                    <button class="bg-arena-black text-arena-gray text-xs px-4 py-2 font-bold uppercase tracking-wider border border-arena-border hover:border-white transition">Protection</button>
+                </div>
+            </div>
+
+            <!-- Retail Catalog Grid Matrix -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item Card 1 -->
+                <div class="bg-arena-card border border-arena-border group hover:border-arena-red transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-10 bg-black/40 h-56 flex items-center justify-center relative border-b border-arena-border overflow-hidden">
+                        <i class="fa-solid fa-mitten text-6xl text-zinc-800 group-hover:text-arena-red/20 group-hover:scale-125 transition duration-500"></i>
+                        <span class="absolute top-3 left-3 bg-arena-red text-white font-impact text-xs px-2.5 py-0.5 uppercase tracking-wide">Elite Grade</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-bold text-lg font-impact tracking-wide text-white uppercase">Competition Pro Gloves</h3>
+                            <span class="text-arena-gold font-impact text-xl font-bold">$99.99</span>
+                        </div>
+                        <p class="text-xs text-arena-gray leading-relaxed">Full-grain performance leather configurations matching official fight card regulation thickness profiles.</p>
+                        <button onclick="injectItemToCart(1, 'Competition Pro Gloves', 99.99)" class="w-full bg-arena-red text-white hover:bg-white hover:text-black py-3 font-impact uppercase tracking-wider text-sm transition">Add to Fight Kit</button>
+                    </div>
+                </div>
+
+                <!-- Item Card 2 -->
+                <div class="bg-arena-card border border-arena-border group hover:border-arena-red transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-10 bg-black/40 h-56 flex items-center justify-center relative border-b border-arena-border overflow-hidden">
+                        <i class="fa-solid fa-bandage text-6xl text-zinc-800 group-hover:text-arena-red/20 group-hover:scale-125 transition duration-500"></i>
+                        <span class="absolute top-3 left-3 bg-zinc-800 text-white font-impact text-xs px-2.5 py-0.5 uppercase tracking-wide">180 Inch</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-bold text-lg font-impact tracking-wide text-white uppercase">Reinforced Wrist Wraps</h3>
+                            <span class="text-arena-gold font-impact text-xl font-bold">$14.99</span>
+                        </div>
+                        <p class="text-xs text-arena-gray leading-relaxed">Semi-elastic herringbone customized weave matrices protect fragile carpal alignments over stress periods.</p>
+                        <button onclick="injectItemToCart(2, 'Reinforced Wrist Wraps', 14.99)" class="w-full bg-arena-red text-white hover:bg-white hover:text-black py-3 font-impact uppercase tracking-wider text-sm transition">Add to Fight Kit</button>
+                    </div>
+                </div>
+
+                <!-- Item Card 3 -->
+                <div class="bg-arena-card border border-arena-border group hover:border-arena-red transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-10 bg-black/40 h-56 flex items-center justify-center relative border-b border-arena-border overflow-hidden">
+                        <i class="fa-solid fa-cubes text-6xl text-zinc-800 group-hover:text-arena-red/20 group-hover:scale-125 transition duration-500"></i>
+                        <span class="absolute top-3 left-3 bg-arena-red text-white font-impact text-xs px-2.5 py-0.5 uppercase tracking-wide">100 lbs Max</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-bold text-lg font-impact tracking-wide text-white uppercase">Ballistic Heavy Punch Bag</h3>
+                            <span class="text-arena-gold font-impact text-xl font-bold">$149.99</span>
+                        </div>
+                        <p class="text-xs text-arena-gray leading-relaxed">Industrial vinyl leather shell matrix built to sustain immense kinetic impact cycles without tears.</p>
+                        <button onclick="injectItemToCart(3, 'Ballistic Heavy Bag', 149.99)" class="w-full bg-arena-red text-white hover:bg-white hover:text-black py-3 font-impact uppercase tracking-wider text-sm transition">Add to Fight Kit</button>
+                    </div>
+                </div>
+
+                <!-- Item Card 4 (NEW) -->
+                <div class="bg-arena-card border border-arena-border group hover:border-arena-red transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-10 bg-black/40 h-56 flex items-center justify-center relative border-b border-arena-border overflow-hidden">
+                        <i class="fa-solid fa-head-side-mask text-6xl text-zinc-800 group-hover:text-arena-red/20 group-hover:scale-125 transition duration-500"></i>
+                        <span class="absolute top-3 left-3 bg-zinc-800 text-white font-impact text-xs px-2.5 py-0.5 uppercase tracking-wide">Full Protection</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-bold text-lg font-impact tracking-wide text-white uppercase">Pro-Sparring Headgear</h3>
+                            <span class="text-arena-gold font-impact text-xl font-bold">$74.99</span>
+                        </div>
+                        <p class="text-xs text-arena-gray leading-relaxed">Cheek-protection formats wrapped cleanly inside shock-absorbent multi-foam structural boundaries.</p>
+                        <button onclick="injectItemToCart(4, 'Pro-Sparring Headgear', 74.99)" class="w-full bg-arena-red text-white hover:bg-white hover:text-black py-3 font-impact uppercase tracking-wider text-sm transition">Add to Fight Kit</button>
+                    </div>
+                </div>
+
+                <!-- Item Card 5 (NEW) -->
+                <div class="bg-arena-card border border-arena-border group hover:border-arena-red transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-10 bg-black/40 h-56 flex items-center justify-center relative border-b border-arena-border overflow-hidden">
+                        <i class="fa-solid fa-shoe-prints text-6xl text-zinc-800 group-hover:text-arena-red/20 group-hover:scale-125 transition duration-500"></i>
+                        <span class="absolute top-3 left-3 bg-arena-red text-white font-impact text-xs px-2.5 py-0.5 uppercase tracking-wide">Hyper Traction</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-bold text-lg font-impact tracking-wide text-white uppercase">Apex Ring Boxing Shoes</h3>
+                            <span class="text-arena-gold font-impact text-xl font-bold">$119.99</span>
+                        </div>
+                        <p class="text-xs text-arena-gray leading-relaxed">Ultra-lightweight mesh profiles paired with die-cut rubber outsoles for exceptional pivoting grip.</p>
+                        <button onclick="injectItemToCart(5, 'Apex Ring Shoes', 119.99)" class="w-full bg-arena-red text-white hover:bg-white hover:text-black py-3 font-impact uppercase tracking-wider text-sm transition">Add to Fight Kit</button>
+                    </div>
+                </div>
+
+                <!-- Item Card 6 (NEW) -->
+                <div class="bg-arena-card border border-arena-border group hover:border-arena-red transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-10 bg-black/40 h-56 flex items-center justify-center relative border-b border-arena-border overflow-hidden">
+                        <i class="fa-solid fa-shirt text-6xl text-zinc-800 group-hover:text-arena-red/20 group-hover:scale-125 transition duration-500"></i>
+                        <span class="absolute top-3 left-3 bg-zinc-800 text-white font-impact text-xs px-2.5 py-0.5 uppercase tracking-wide">Dry Tech</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-bold text-lg font-impact tracking-wide text-white uppercase">Official Fight Camp Jersey</h3>
+                            <span class="text-arena-gold font-impact text-xl font-bold">$29.99</span>
+                        </div>
+                        <p class="text-xs text-arena-gray leading-relaxed">Moisture-wicking mesh fibers featuring anti-odor technological weaving for extreme training cycles.</p>
+                        <button onclick="injectItemToCart(6, 'Fight Camp Jersey', 29.99)" class="w-full bg-arena-red text-white hover:bg-white hover:text-black py-3 font-impact uppercase tracking-wider text-sm transition">Add to Fight Kit</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: FIGHTER REGISTRATION MODULE ================= -->
+        <section id="view-register" class="page-view space-y-10">
+            <div class="border-l-4 border-arena-red pl-4 py-1">
+                <h2 class="text-5xl font-black uppercase tracking-tight font-impact text-white">ATHLETIC TOURNAMENT <span class="text-arena-red">LICENSING</span></h2>
+                <p class="text-arena-gray text-xs uppercase tracking-widest mt-1">Official commissions database configuration portal</p>
+            </div>
+
+            <!-- Validation Success Panel Container -->
+            <div id="form-success-banner" class="hidden bg-zinc-900 border-2 border-emerald-500 p-6 flex items-start space-x-4 animate-fade-in">
+                <div class="bg-emerald-500 text-black p-2.5"><i class="fa-solid fa-check-double text-xl"></i></div>
+                <div>
+                    <h4 class="font-impact uppercase text-xl text-emerald-400 tracking-wide">Fighter Matrix Record Captured Successfully</h4>
+                    <p class="text-xs text-arena-gray mt-1">Biometric attributes cross-routed to matchup engine algorithms. Medical validation requirements incoming via email channels promptly.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <!-- Registration Application Form layout -->
+                <form id="fighter-core-form" onsubmit="processFormSubmission(event)" class="lg:col-span-2 bg-arena-darker border border-arena-border p-6 md:p-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Full Name -->
+                    <div class="flex flex-col space-y-1.5">
+                        <label class="text-xs font-bold uppercase tracking-wider text-arena-gray">Legal Full Name <span class="text-arena-red">*</span></label>
+                        <input type="text" required id="f-name" class="bg-arena-black border border-arena-border p-3.5 focus:outline-none focus:border-arena-red text-white text-sm" placeholder="e.g., John Doe">
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="flex flex-col space-y-1.5">
+                        <label class="text-xs font-bold uppercase tracking-wider text-arena-gray">Communications Email Address <span class="text-arena-red">*</span></label>
+                        <input type="email" required id="f-email" class="bg-arena-black border border-arena-border p-3.5 focus:outline-none focus:border-arena-red text-white text-sm" placeholder="fighter@network.com">
+                    </div>
+
+                    <!-- Age Variable Input -->
+                    <div class="flex flex-col space-y-1.5">
+                        <label class="text-xs font-bold uppercase tracking-wider text-arena-gray">Age Profile <span class="text-arena-red">*</span></label>
+                        <input type="number" required min="16" max="60" id="f-age" class="bg-arena-black border border-arena-border p-3.5 focus:outline-none focus:border-arena-red text-white text-sm" placeholder="Min age criteria: 16">
+                    </div>
+
+                    <!-- Gender Class Selection Dropdown -->
+                    <div class="flex flex-col space-y-1.5">
+                        <label class="text-xs font-bold uppercase tracking-wider text-arena-gray">Competitive Division Gender <span class="text-arena-red">*</span></label>
+                        <select required id="f-gender" class="bg-arena-black border border-arena-border p-3.5 focus:outline-none focus:border-arena-red text-sm text-arena-gray">
+                            <option value="">Select gender alignment...</option>
+                            <option value="Male">Male Class Division</option>
+                            <option value="Female">Female Class Division</option>
+                        </select>
+                    </div>
+
+                    <!-- Verified Weight metric field -->
+                    <div class="flex flex-col space-y-1.5">
+                        <label class="text-xs font-bold uppercase tracking-wider text-arena-gray">Verified Weight Metric (lbs) <span class="text-arena-red">*</span></label>
+                        <input type="number" required step="0.1" id="f-weight" class="bg-arena-black border border-arena-border p-3.5 focus:outline-none focus:border-arena-red text-white text-sm" placeholder="Ex: 154.5">
+                    </div>
+
+                    <!-- Blood Category Matrix Selection Dropdown -->
+                    <div class="flex flex-col space-y-1.5">
+                        <label class="text-xs font-bold uppercase tracking-wider text-arena-gray">Emergency Blood Class Type <span class="text-arena-red">*</span></label>
+                        <select required id="f-blood" class="bg-arena-black border border-arena-border p-3.5 focus:outline-none focus:border-arena-red text-sm text-arena-gray">
+                            <option value="">Select blood type group...</option>
+                            <option value="A+">A+ Type Group</option>
+                            <option value="A-">A- Type Group</option>
+                            <option value="B+">B+ Type Group</option>
+                            <option value="B-">B- Type Group</option>
+                            <option value="AB+">AB+ Type Group</option>
+                            <option value="AB-">AB- Type Group</option>
+                            <option value="O+">O+ Type Group</option>
+                            <option value="O-">O- Type Group</option>
+                        </select>
+                    </div>
+
+                    <!-- Residential Coordinates Address area -->
+                    <div class="flex flex-col space-y-1.5 sm:col-span-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-arena-gray">Residential Location Coordinates <span class="text-arena-red">*</span></label>
+                        <textarea required rows="2" id="f-address" class="bg-arena-black border border-arena-border p-3.5 focus:outline-none focus:border-arena-red text-white text-sm" placeholder="Street layout address lines, suite, zip codes, state frameworks"></textarea>
+                    </div>
+
+                    <!-- Terms validation submission lock button -->
+                    <div class="sm:col-span-2 pt-4">
+                        <button type="submit" class="w-full bg-arena-red text-white font-impact tracking-widest text-xl uppercase py-4 hover:bg-white hover:text-black transition duration-300 transform -skew-x-3">
+                            Transmit Fighter Application Dossier
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Informational Sidebar Checklist Panel -->
+                <div class="space-y-4 bg-arena-card border border-arena-border p-6">
+                    <h3 class="font-impact text-xl tracking-wider text-white uppercase"><i class="fa-solid fa-scale-balanced text-arena-red mr-2"></i> Matchmaking Rules</h3>
+                    <ul class="space-y-3 text-xs text-arena-gray">
+                        <li class="flex items-start"><i class="fa-solid fa-caret-right text-arena-red mr-2 mt-0.5"></i> All fighters undergo official weight verification 24 hours prior to bout execution schedules.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-caret-right text-arena-red mr-2 mt-0.5"></i> Blood classification grouping datasets are critical medical mandates enforced ringside.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-caret-right text-arena-red mr-2 mt-0.5"></i> Headgear protection criteria are dynamically enforced based on amateur tier classifications.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION LAYOUT -->
+    <footer class="bg-black border-t border-arena-border py-10 text-center text-xs text-arena-gray tracking-widest uppercase">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p>&copy; 2026 KHALID BOXING CLUB ARCHITECTURE. ALL FIGHT RIGHTS RESERVED.</p>
+            <p class="text-[10px] text-neutral-700 font-sans tracking-normal font-medium">Strictly conforming to official combat sports athletic commission software platform engineering specifications.</p>
+        </div>
+    </footer>
+
+    <!-- ================= SLIDE OUT OVERLAY SHOPPING CART DRAWER ================= -->
+    <div id="cart-drawer-overlay" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="toggleCartOverlay()"></div>
+        
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-arena-darker border-l border-arena-border flex flex-col justify-between shadow-2xl">
+                <!-- Top Title Row Header -->
+                <div class="p-6 border-b border-arena-border flex items-center justify-between bg-black">
+                    <h3 class="text-xl font-bold uppercase font-impact tracking-wide text-white"><i class="fa-solid fa-shopping-cart text-arena-red mr-2"></i> Current Fight Kit</h3>
+                    <button onclick="toggleCartOverlay()" class="text-arena-gray hover:text-white transition"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+
+                <!-- Live Dynamic Array Element Target Node -->
+                <div class="flex-1 p-6 overflow-y-auto space-y-4" id="cart-items-injection-node">
+                    <p id="cart-blank-fallback-msg" class="text-center font-impact uppercase tracking-wider text-sm text-arena-gray py-20">Your kit inventory allocation is empty.</p>
+                </div>
+
+                <!-- Mathematical Summary Calculation Bottom Box -->
+                <div class="p-6 border-t border-arena-border bg-black/60 space-y-4">
+                    <div class="flex justify-between items-baseline font-impact text-lg uppercase tracking-wider">
+                        <span>Aggregate Kit Total:</span>
+                        <span id="cart-summary-total-price" class="text-arena-gold text-2xl font-black">$0.00</span>
+                    </div>
+                    <button onclick="alert('E-Commerce processing systems activated successfully.')" class="w-full bg-arena-red text-white font-impact uppercase tracking-widest text-base py-4 border border-transparent hover:bg-white hover:text-black transition">
+                        Lock In Equipment Purchase
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= APPLICATION JAVASCRIPT LOGIC ENGINE ================= -->
+    <script>
+        // Store Storage Database Arrays
+        let activeShoppingKitCollection = [];
+
+        // App Multi-Page View Transition Router
+        function switchView(targetViewId) {
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active');
+            });
+            const targetedSection = document.getElementById(`view-${targetViewId}`);
+            if (targetedSection) targetedSection.classList.add('active');
+
+            // Align active header button styles
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-arena-red', 'border-b', 'border-arena-red');
+                btn.classList.add('text-arena-gray');
+            });
+
+            const linkRoutingMatrix = { 'home': 0, 'shop': 1, 'register': 2 };
+            const operationalIndex = linkRoutingMatrix[targetViewId];
+            const targetNavButtonElement = document.querySelectorAll('.nav-btn')[operationalIndex];
+            
+            if (targetNavButtonElement) {
+                targetNavButtonElement.classList.remove('text-arena-gray');
+                targetNavButtonElement.classList.add('text-arena-red', 'border-b', 'border-arena-red');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Toggle visual hidden overlay state parameters on cart drawer element
+        function toggleCartOverlay() {
+            const overlayNode = document.getElementById('cart-drawer-overlay');
+            overlayNode.classList.toggle('hidden');
+        }
+
+        // Add to cart logical array calculator
+        function injectItemToCart(productId, productTitle, unitPriceFloat) {
+            const preExistingInstance = activeShoppingKitCollection.find(item => item.id === productId);
+
+            if (preExistingInstance) {
+                preExistingInstance.itemCount += 1;
+            } else {
+                activeShoppingKitCollection.push({
+                    id: productId,
+                    title: productTitle,
+                    price: unitPriceFloat,
+                    itemCount: 1
+                });
+            }
+
+            refreshCartUILayout();
+            
+            // Auto open panel view for responsive feedback loops
+            const overlayNode = document.getElementById('cart-drawer-overlay');
+            if (overlayNode.classList.contains('hidden')) {
+                overlayNode.classList.remove('hidden');
+            }
+        }
+
+        // Evict structural matrix item lines out of cart array tracking loop
+        function evictCartItemLine(productIdToRemove) {
+            activeShoppingKitCollection = activeShoppingKitCollection.filter(item => item.id !== productIdToRemove);
+            refreshCartUILayout();
+        }
+
+        // Loop stored items and build complete visual HTML card nodes automatically
+        function refreshCartUILayout() {
+            const targetDisplayWrapper = document.getElementById('cart-items-injection-node');
+            const totalCashValueField = document.getElementById('cart-summary-total-price');
+            const globalBadgeIndicator = document.getElementById('global-cart-badge');
+            const fallbackTextElement = document.getElementById('cart-blank-fallback-msg');
+
+            // Clear previous loops cleanly
+            targetDisplayWrapper.querySelectorAll('.live-cart-item-row').forEach(el => el.remove());
+
+            if (activeShoppingKitCollection.length === 0) {
+                fallbackTextElement.classList.remove('hidden');
+                totalCashValueField.innerText = '$0.00';
+                globalBadgeIndicator.classList.add('hidden');
+                globalBadgeIndicator.innerText = '0';
+                return;
+            }
+
+            fallbackTextElement.classList.add('hidden');
+            let combinedPriceAccumulator = 0;
+            let totalItemsCounter = 0;
+
+            activeShoppingKitCollection.forEach(item => {
+                const calculatedRowSum = item.price * item.itemCount;
+                combinedPriceAccumulator += calculatedRowSum;
+                totalItemsCounter += item.itemCount;
+
+                const UIItemRowContainer = document.createElement('div');
+                UIItemRowContainer.className = 'live-cart-item-row flex justify-between items-center bg-arena-black p-4 border border-arena-border';
+                UIItemRowContainer.innerHTML = `
+                    <div class="space-y-1">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-white font-impact">${item.title}</h4>
+                        <p class="text-xs text-arena-gold">${item.itemCount}x <span class="text-arena-gray">@ $${item.price} each</span></p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-sm font-bold text-white font-impact">$${calculatedRowSum.toFixed(2)}</span>
+                        <button onclick="evictCartItemLine(${item.id})" class="text-arena-red hover:text-white transition text-sm p-1"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                `;
+                targetDisplayWrapper.appendChild(UIItemRowContainer);
+            });
+
+            totalCashValueField.innerText = `$${combinedPriceAccumulator.toFixed(2)}`;
+            globalBadgeIndicator.innerText = totalItemsCounter;
+            globalBadgeIndicator.classList.remove('hidden');
+        }
+
+        // Interactive Pricing estimator math function module
+        function calculateInteractiveMembership() {
+            const rawDaysCount = parseInt(document.getElementById('calc-range-days').value);
+            const rawTierSelection = parseInt(document.getElementById('calc-range-tier').value);
+
+            // Interface String Value sync adjustments
+            document.getElementById('calc-display-days').innerText = `${rawDaysCount} Days / Wk`;
+            
+            let tierLabelString = "Standard Arena Access";
+            let scalarMultiplier = 15;
+
+            if (rawTierSelection === 2) {
+                tierLabelString = "Pro Coach Fight Camp";
+                scalarMultiplier = 25;
+            } else if (rawTierSelection === 3) {
+                tierLabelString = "Elite VIP Ringside Card";
+                scalarMultiplier = 40;
+            }
+
+            document.getElementById('calc-display-tier').innerText = tierLabelString;
+
+            // Computational aggregate math output formula
+            const calculatedTotalSum = rawDaysCount * scalarMultiplier;
+            document.getElementById('calc-total-output').innerText = `$${calculatedTotalSum.toFixed(2)}`;
+        }
+
+        // Form data pipeline processing module
+        function processFormSubmission(event) {
+            event.preventDefault();
+
+            const parsedFighterProfilePayload = {
+                name: document.getElementById('f-name').value,
+                email: document.getElementById('f-email').value,
+                age: document.getElementById('f-age').value,
+                gender: document.getElementById('f-gender').value,
+                weight: document.getElementById('f-weight').value,
+                blood: document.getElementById('f-blood').value,
+                address: document.getElementById('f-address').value
+            };
+
+            console.log('ATHLETIC LICENSE DOSSIER TRANSMITTED SUCCESSFULLY:', parsedFighterProfilePayload);
+
+            const statusBanner = document.getElementById('form-success-banner');
+            statusBanner.classList.remove('hidden');
+
+            document.getElementById('fighter-core-form').reset();
+            window.scrollTo({ top: statusBanner.offsetTop - 120, behavior: 'smooth' });
+        }
+
+        // Initialize UI default weights
+        calculateInteractiveMembership();
+    </script>
+</body>
+</html>
